@@ -5,19 +5,26 @@ import { Link } from 'gatsby';
 const Navbar = ({ siteTitle }) => (
   <nav className="navbar navbar-expand navbar-dark bg-dark mb-4">
     <div className="container">
-      <a className="navbar-brand" href="#">
+      <Link
+        to="/"
+        style={{
+          color: `white`,
+          textDecoration: `none`,
+          fontSize: '1.5rem',
+        }}
+      >
         {siteTitle}
-      </a>
+      </Link>
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <Link to="/">
-              <a className="nav-link">Home</a>
+            <Link to="/" className="nav-link">
+              Home
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/about/">
-              <a className="nav-link">About</a>
+            <Link to="/about/" className="nav-link">
+              About
             </Link>
           </li>
         </ul>

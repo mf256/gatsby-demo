@@ -7,8 +7,11 @@ import Prices from '../components/prices';
 const IndexPage = props => (
   <Layout>
     <SEO title="Home" />
-    <div class="container">
-      <h3 class="row justify-content-center"> Welcome to demo gatsby site! </h3>
+    <div className="container">
+      <h3 className="row justify-content-center">
+        {' '}
+        Welcome to demo gatsby site!{' '}
+      </h3>
       <br />
       <Prices></Prices>
     </div>

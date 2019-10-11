@@ -1,8 +1,33 @@
 import React from 'react';
+import axios from 'axios';
+import Price from './price';
+import Loading from './loading';
 
 class Prices extends React.Component {
   state = {
+    loading: true,
+    error: false,
     currency: 'USD',
+    bpi: {},
+  };
+
+  componentDidMount() {
+    this.getInitialData();
+  }
+
+  getInitialData = () => {
+    this.setState({ loading: true });
+    axios
+      .get(`https://api.coindesk.com/v1/bpi/currentprice.json`)
+      .then(res => {
+        this.setState({
+          loading: false,
+          bpi: res.data.bpi,
+        });
+      })
+      .catch(error => {
+        this.setState({ loading: false, error });
+      });
   };
 
   render() {
@@ -10,8 +35,15 @@ class Prices extends React.Component {
       <div>
         <ul className="list-group">
           <li className="list-group-item">
-            Bitcoin rate for :<span className="badge badge-primary"></span>
-            <strong></strong>
+            {this.state.loading ? (
+              <Loading />
+            ) : (
+              <Price
+                description={this.state.bpi[this.state.currency].description}
+                code={this.state.bpi[this.state.currency].code}
+                rate={this.state.bpi[this.state.currency].rate}
+              />
+            )}
           </li>
         </ul>
         <br />
@@ -23,14 +55,6 @@ class Prices extends React.Component {
           <option value="GBP">GBP</option>
           <option value="EUR">EUR</option>
         </select>
-
-        <style jsx>
-          {`
-            .badge {
-              margin: 0 0.5em;
-            }
-          `}
-        </style>
       </div>
     );
   }
