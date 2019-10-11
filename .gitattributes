@@ -1,2 +1,2 @@
-docs linguist-vendored
-public linguist-vendored
+docs/* linguist-vendored
+public/* linguist-vendored
