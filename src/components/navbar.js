@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 const Navbar = ({ siteTitle }) => (
-  <nav className="navbar navbar-expand navbar-dark bg-dark mb-4">
+  <nav
+    className="navbar navbar-expand navbar-dark mb-4"
+    style={{
+      background: `rebeccapurple`,
+    }}
+  >
     <div className="container">
       <Link
         to="/"
