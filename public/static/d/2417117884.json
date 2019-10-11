@@ -1,0 +1,11 @@
+{
+  "data": {
+    "site": {
+      "siteMetadata": {
+        "title": "Gatsby Demo Site",
+        "description": "Gatsby demo site.",
+        "author": "@gatsbyjs"
+      }
+    }
+  }
+}
