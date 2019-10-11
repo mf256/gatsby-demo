@@ -9,8 +9,7 @@ const IndexPage = props => (
     <SEO title="Home" />
     <div className="container">
       <h3 className="row justify-content-center">
-        {' '}
-        Welcome to demo gatsby site!{' '}
+        Welcome to gatsby demo site!
       </h3>
       <br />
       <Prices></Prices>
